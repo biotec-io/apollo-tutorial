@@ -1,4 +1,4 @@
-export const typeDefs = `
+export default const typeDefs = `
   type Channel {
     id: ID!
     name: String
