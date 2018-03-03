@@ -1,10 +1,12 @@
 import { gql } from 'apollo-boost';
 
-export default gql`
+const ChannelsListQuery = gql`
   query ChannelsListQuery {
-    channels {
+    allChannels {
       id
       name
     }
   }
 `;
+
+export default ChannelsListQuery;

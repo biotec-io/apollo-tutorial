@@ -7,18 +7,8 @@ import logo from './logo.svg';
 import './App.css';
 import ChannelsList from './components/ChanelsList';
 
-// Mocking backend a
-import { makeExecutableSchema, addMockFunctionsToSchema } from 'graphql-tools';
-import { mockNetworkInterfaceWithSchema } from 'apollo-test-utils';
-import { typeDefs } from './schema';
-
-const schema = makeExecutableSchema({ typeDefs });
-addMockFunctionsToSchema({ schema });
-
-const mockNetworkInterface = mockNetworkInterfaceWithSchema({ schema });
-
 const client = new ApolloClient({
-  networkInterface: mockNetworkInterface
+  uri: 'https://api.graph.cool/simple/v1/cjeah8gn71lvx0171ta17gtbv'
 });
 
 class App extends Component {
