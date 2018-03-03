@@ -7,6 +7,9 @@
       "aspects": ["noHref", "invalidHref", "preferButton"]
     }],
     "import/no-extraneous-dependencies": 0,
-    "react/require-default-props": 0
+    "react/require-default-props": 0,
+    "react/prop-types": [2, { "ignore": [
+      "data"
+    ]}]
   }
 }

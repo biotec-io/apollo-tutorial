@@ -1,11 +1,17 @@
 import React, { Component } from 'react';
 import { graphql } from 'react-apollo';
+import PropTypes from 'prop-types';
 
 /* Queries and mutations */
 import query from '../queries/ChannelsListQuery';
 import mutations from '../mutations';
 
 class AddChannel extends Component {
+  constructor(props) {
+    super(props);
+    this.handleKeyUp = this.handleKeyUp.bind(this);
+  }
+
   handleKeyUp(e) {
     if (e.keyCode === 13) {
       e.persist();
@@ -16,8 +22,8 @@ class AddChannel extends Component {
           createChannel: {
             __typename: 'Channel',
             id: Math.round(Math.random() * -1000000),
-            name: e.target.value
-          }
+            name: e.target.value,
+          },
         },
         update: (store, { data: { createChannel } }) => {
           // Read the data from the cache for this query
@@ -28,8 +34,10 @@ class AddChannel extends Component {
 
           // Write the data back to the cache
           store.writeQuery({ query, data });
-        }
-      }).then(res => e.target.value = '');
+        },
+      }).then(() => {
+        e.target.value = '';
+      });
     }
   }
 
@@ -38,10 +46,14 @@ class AddChannel extends Component {
       <input
         type="text"
         placeholder="New channel"
-        onKeyUp={this.handleKeyUp.bind(this)}
+        onKeyUp={this.handleKeyUp}
       />
-    )
+    );
   }
 }
+
+AddChannel.propTypes = {
+  mutate: PropTypes.func,
+};
 
 export default graphql(mutations)(AddChannel);
