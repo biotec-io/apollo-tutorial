@@ -11,7 +11,24 @@ class AddChannel extends Component {
       e.persist();
       this.props.mutate({
         variables: { name: e.target.value },
-        refetchQueries: [ { query }]
+        optimisticResponse: {
+          __typename: 'Mutation',
+          createChannel: {
+            __typename: 'Channel',
+            id: Math.round(Math.random() * -1000000),
+            name: e.target.value
+          }
+        },
+        update: (store, { data: { createChannel } }) => {
+          // Read the data from the cache for this query
+          const data = store.readQuery({ query });
+
+          // Add our channel from the mutation to the end
+          data.allChannels.push(createChannel);
+
+          // Write the data back to the cache
+          store.writeQuery({ query, data });
+        }
       }).then(res => e.target.value = '');
     }
   }

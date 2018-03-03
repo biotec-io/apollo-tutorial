@@ -1,7 +1,7 @@
 import { gql } from 'apollo-boost';
 
 const mutations = gql`
-  mutation AddChannel($name: String) {
+  mutation addChannel($name: String) {
     createChannel(name: $name) {
       id
       name

@@ -1,8 +1,21 @@
-import React from 'react';
-import { graphql } from 'react-apollo';
+import React from "react";
+import { graphql } from "react-apollo";
 
-import ChannelsListQuery from '../queries/ChannelsListQuery';
-import AddChannel from './AddChannel';
+import ChannelsListQuery from "../queries/ChannelsListQuery";
+import AddChannel from "./AddChannel";
+
+const Channels = (channels) => {
+  return channels.map(c => {
+    return (
+      <li
+        style={{ color: c.id < 0 ? "red" : "black" }}
+        key={c.id}
+      >
+        {c.name}
+      </li>
+    );
+  });
+};
 
 const ChannelsList = ({ data: { loading, error, allChannels } }) => {
   if (loading) {
@@ -17,9 +30,7 @@ const ChannelsList = ({ data: { loading, error, allChannels } }) => {
     <div className="channelsList">
       <AddChannel />
       <ul>
-        {
-          allChannels.map(channel => <li key={channel.id}>{channel.name}</li>)
-        }
+        {Channels(allChannels)}
       </ul>
     </div>
   );
