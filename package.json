@@ -98,6 +98,9 @@
     ]
   },
   "devDependencies": {
+    "@material/card": "^0.31.0",
+    "@material/layout-grid": "^0.24.0",
+    "@material/toolbar": "^0.30.0",
     "node-sass": "^4.7.2",
     "sass-lint": "^1.12.1",
     "sass-loader": "^6.0.7"

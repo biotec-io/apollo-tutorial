@@ -2,6 +2,67 @@
 # yarn lockfile v1
 
 
+"@material/animation@^0.25.0":
+  version "0.25.0"
+  resolved "https://registry.yarnpkg.com/@material/animation/-/animation-0.25.0.tgz#b252ac3d0b628e79a79f0c406d7470fb56352a80"
+
+"@material/base@^0.29.0":
+  version "0.29.0"
+  resolved "https://registry.yarnpkg.com/@material/base/-/base-0.29.0.tgz#5fac94c45907e38c969130e959722288d4ce06b2"
+
+"@material/card@^0.31.0":
+  version "0.31.0"
+  resolved "https://registry.yarnpkg.com/@material/card/-/card-0.31.0.tgz#9aa8dd4d0980d82a61636069077e6ce2572d219a"
+  dependencies:
+    "@material/elevation" "^0.28.0"
+    "@material/ripple" "^0.31.0"
+    "@material/rtl" "^0.30.0"
+    "@material/theme" "^0.30.0"
+
+"@material/elevation@^0.28.0":
+  version "0.28.0"
+  resolved "https://registry.yarnpkg.com/@material/elevation/-/elevation-0.28.0.tgz#78d3a551b78100d588c457600733ee1c6fd04501"
+  dependencies:
+    "@material/animation" "^0.25.0"
+    "@material/theme" "^0.4.0"
+
+"@material/layout-grid@^0.24.0":
+  version "0.24.0"
+  resolved "https://registry.yarnpkg.com/@material/layout-grid/-/layout-grid-0.24.0.tgz#223d771d755d887807998d96f5996e182ceb640d"
+
+"@material/ripple@^0.31.0":
+  version "0.31.0"
+  resolved "https://registry.yarnpkg.com/@material/ripple/-/ripple-0.31.0.tgz#8116ac7727b7b01d0742d92df7c3cb643bb670cc"
+  dependencies:
+    "@material/base" "^0.29.0"
+    "@material/theme" "^0.30.0"
+
+"@material/rtl@^0.30.0":
+  version "0.30.0"
+  resolved "https://registry.yarnpkg.com/@material/rtl/-/rtl-0.30.0.tgz#0fbda0bc0e8a7baa6c29413fc3f9f8edda602502"
+
+"@material/theme@^0.30.0":
+  version "0.30.0"
+  resolved "https://registry.yarnpkg.com/@material/theme/-/theme-0.30.0.tgz#503d7fd5ac88ff70763bb277236ee7188982e5d2"
+
+"@material/theme@^0.4.0":
+  version "0.4.0"
+  resolved "https://registry.yarnpkg.com/@material/theme/-/theme-0.4.0.tgz#0aef1a0279b65c15990584fb8b8eca095c734641"
+
+"@material/toolbar@^0.30.0":
+  version "0.30.0"
+  resolved "https://registry.yarnpkg.com/@material/toolbar/-/toolbar-0.30.0.tgz#59c3fc19fcf5cf7a30ecb7f0c705c2fea2df893d"
+  dependencies:
+    "@material/base" "^0.29.0"
+    "@material/elevation" "^0.28.0"
+    "@material/rtl" "^0.30.0"
+    "@material/theme" "^0.30.0"
+    "@material/typography" "^0.28.0"
+
+"@material/typography@^0.28.0":
+  version "0.28.0"
+  resolved "https://registry.yarnpkg.com/@material/typography/-/typography-0.28.0.tgz#4ae96a852fcd324d61b649adc995326c431fcaea"
+
 "@types/async@2.0.47":
   version "2.0.47"
   resolved "https://registry.yarnpkg.com/@types/async/-/async-2.0.47.tgz#f49ba1dd1f189486beb6e1d070a850f6ab4bd521"

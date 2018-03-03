@@ -1,3 +1,4 @@
+/* eslint-disable */
 'use strict';
 
 const autoprefixer = require('autoprefixer');
@@ -151,13 +152,6 @@ module.exports = {
             },
           },
 
-          // "scss" loader
-          {
-            test: /\.scss$/,
-            include: path.appSrc,
-            loaders: ["style", "css", "sass"]
-          },
-
           // "postcss" loader applies autoprefixer to our CSS.
           // "css" loader resolves paths in CSS and adds assets as dependencies.
           // "style" loader turns CSS into JS modules that inject <style> tags.
@@ -200,6 +194,54 @@ module.exports = {
           // In production, they would get copied to the `build` folder.
           // This loader doesn't use a "test" so it will catch all modules
           // that fall through the other loaders.
+          // "scss" loader
+          {
+            test: /\.scss$/,
+            include: paths.appSrc,
+            use: [
+              require.resolve('style-loader'),
+              {
+                loader: require.resolve('css-loader'),
+                options: {
+                  importLoaders: 1,
+                },
+              },
+              {
+                loader: require.resolve('postcss-loader'),
+                options: {
+                  // Necessary for external CSS imports to work
+                  // https://github.com/facebookincubator/create-react-app/issues/2677
+                  ident: 'postcss',
+                  plugins: () => [
+                    require('postcss-flexbugs-fixes'),
+                    autoprefixer({
+                      browsers: [
+                        '>1%',
+                        'last 4 versions',
+                        'Firefox ESR',
+                        'not ie < 9', // React doesn't support IE8 anyway
+                      ],
+                      flexbox: 'no-2009',
+                    }),
+                  ],
+                },
+              },
+              {
+                loader: require.resolve('sass-loader'),
+                options: {
+                  importer: (url, prev) => {
+                    if(url.indexOf('@material') === 0) {
+                      const filePath = url.split('@material')[1];
+                      const nodeModulePath = `${ paths.appNodeModules }/@material${ filePath }`;
+                      console.log(nodeModulePath);
+                      return { file: require('path').resolve(nodeModulePath) };
+                    }
+                    return { file: url };
+                  }
+                }
+              },
+            ]
+          },
           {
             // Exclude `js` files to keep "css" loader working as it injects
             // its runtime that would otherwise processed through "file" loader.
