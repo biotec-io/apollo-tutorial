@@ -25,4 +25,6 @@ const ChannelsList = ({ data: { loading, error, allChannels } }) => {
   );
 };
 
-export default graphql(ChannelsListQuery)(ChannelsList);
+export default graphql(ChannelsListQuery, {
+  options: { pollInterval: 5000 } // Apollo refetch the list from the server
+})(ChannelsList);
