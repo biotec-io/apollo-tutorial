@@ -6,7 +6,10 @@ import AddChannel from './AddChannel';
 
 const Channels = channels => (
   channels.map(c => (
-    <li style={{ color: c.id < 0 ? 'red' : 'black' }} key={c.id}>
+    <li
+      className={(c.id < 0) ? 'mdc-list-item mdc-list-item--selected' : 'mdc-list-item'}
+      key={c.id}
+    >
       {c.name}
     </li>
   ))
@@ -22,11 +25,13 @@ const ChannelsList = ({ data: { loading, error, allChannels } }) => {
   }
 
   return (
-    <div className="channelsList">
+    <div className="mdc-layout-grid__cell">
       <AddChannel />
-      <ul>
-        {Channels(allChannels)}
-      </ul>
+      <div className="mdc-card">
+        <ul className="mdc-list">
+          {Channels(allChannels)}
+        </ul>
+      </div>
     </div>
   );
 };

@@ -1,3 +1,4 @@
+/* eslint-env browser */
 import React from 'react';
 import ApolloClient from 'apollo-boost';
 import { ApolloProvider } from 'react-apollo';
@@ -15,11 +16,18 @@ const client = new ApolloClient({
 
 const App = () => (
   <ApolloProvider client={client}>
-    <div className="App">
-      <div className="App-header">
-        <h2>Welcome to Apollo</h2>
+    <header className="mdc-toolbar">
+      <div className="mdc-toolbar__row">
+        <section className="mdc-toolbar__section mdc-toolbar__section--align-start">
+          <span className="mdc-toolbar__title">Apollo Tutorial</span>
+        </section>
       </div>
-      <ChannelsList />
+    </header>
+
+    <div className="mdc-layout-grid">
+      <div className="mdc-layout-grid__inner">
+        <ChannelsList />
+      </div>
     </div>
   </ApolloProvider>
 );

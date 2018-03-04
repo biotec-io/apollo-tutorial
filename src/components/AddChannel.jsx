@@ -43,11 +43,15 @@ class AddChannel extends Component {
 
   render() {
     return (
-      <input
-        type="text"
-        placeholder="New channel"
-        onKeyUp={this.handleKeyUp}
-      />
+      <div className="mdc-text-field mdc-text-field__fullwidth">
+        <input
+          className="mdc-text-field__input"
+          id="channel"
+          onKeyUp={this.handleKeyUp}
+          placeholder="New channel"
+          type="text"
+        />
+      </div>
     );
   }
 }

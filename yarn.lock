@@ -30,6 +30,23 @@
   version "0.24.0"
   resolved "https://registry.yarnpkg.com/@material/layout-grid/-/layout-grid-0.24.0.tgz#223d771d755d887807998d96f5996e182ceb640d"
 
+"@material/line-ripple@^0.30.0":
+  version "0.30.0"
+  resolved "https://registry.yarnpkg.com/@material/line-ripple/-/line-ripple-0.30.0.tgz#26f453ce07ae677e23625578ead7da8abd1bb02c"
+  dependencies:
+    "@material/animation" "^0.25.0"
+    "@material/base" "^0.29.0"
+    "@material/theme" "^0.30.0"
+
+"@material/list@^0.31.0":
+  version "0.31.0"
+  resolved "https://registry.yarnpkg.com/@material/list/-/list-0.31.0.tgz#623059a17938cd6b04d7db7b0d2844da3b6f22f3"
+  dependencies:
+    "@material/ripple" "^0.31.0"
+    "@material/rtl" "^0.30.0"
+    "@material/theme" "^0.30.0"
+    "@material/typography" "^0.28.0"
+
 "@material/ripple@^0.31.0":
   version "0.31.0"
   resolved "https://registry.yarnpkg.com/@material/ripple/-/ripple-0.31.0.tgz#8116ac7727b7b01d0742d92df7c3cb643bb670cc"
@@ -40,6 +57,18 @@
 "@material/rtl@^0.30.0":
   version "0.30.0"
   resolved "https://registry.yarnpkg.com/@material/rtl/-/rtl-0.30.0.tgz#0fbda0bc0e8a7baa6c29413fc3f9f8edda602502"
+
+"@material/textfield@^0.31.0":
+  version "0.31.0"
+  resolved "https://registry.yarnpkg.com/@material/textfield/-/textfield-0.31.0.tgz#bd56781525c52e1ce9810b703cb148dc0cf9a6a2"
+  dependencies:
+    "@material/animation" "^0.25.0"
+    "@material/base" "^0.29.0"
+    "@material/line-ripple" "^0.30.0"
+    "@material/ripple" "^0.31.0"
+    "@material/rtl" "^0.30.0"
+    "@material/theme" "^0.30.0"
+    "@material/typography" "^0.28.0"
 
 "@material/theme@^0.30.0":
   version "0.30.0"
