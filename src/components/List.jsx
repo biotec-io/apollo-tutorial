@@ -10,6 +10,7 @@ List.propTypes = {
     PropTypes.element,
     PropTypes.string,
     PropTypes.func,
+    PropTypes.array,
   ]),
 };
 

@@ -10,7 +10,7 @@ import ListItem from '../components/ListItem';
 
 const Channels = channels => (
   channels.map(c => (
-    <ListItem selected={c.id < 0}>{c.name}</ListItem>
+    <ListItem key={c.id} selected={c.id < 0}>{c.name}</ListItem>
   ))
 );
 
