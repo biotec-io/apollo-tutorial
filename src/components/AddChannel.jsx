@@ -6,6 +6,9 @@ import PropTypes from 'prop-types';
 import query from '../queries/ChannelsListQuery';
 import mutations from '../mutations';
 
+/* Components */
+import Input from '../components/Input';
+
 class AddChannel extends Component {
   constructor(props) {
     super(props);
@@ -42,17 +45,7 @@ class AddChannel extends Component {
   }
 
   render() {
-    return (
-      <div className="mdc-text-field mdc-text-field__fullwidth">
-        <input
-          className="mdc-text-field__input"
-          id="channel"
-          onKeyUp={this.handleKeyUp}
-          placeholder="New channel"
-          type="text"
-        />
-      </div>
-    );
+    return <Input placeholder="New channel" onKeyUp={this.handleKeyUp} />;
   }
 }
 

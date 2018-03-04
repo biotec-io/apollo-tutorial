@@ -3,15 +3,14 @@ import { graphql } from 'react-apollo';
 
 import ChannelsListQuery from '../queries/ChannelsListQuery';
 import AddChannel from './AddChannel';
+import Card from '../components/Card';
+import List from '../components/List';
+import ListItem from '../components/ListItem';
+
 
 const Channels = channels => (
   channels.map(c => (
-    <li
-      className={(c.id < 0) ? 'mdc-list-item mdc-list-item--selected' : 'mdc-list-item'}
-      key={c.id}
-    >
-      {c.name}
-    </li>
+    <ListItem selected={c.id < 0}>{c.name}</ListItem>
   ))
 );
 
@@ -27,11 +26,11 @@ const ChannelsList = ({ data: { loading, error, allChannels } }) => {
   return (
     <div className="mdc-layout-grid__cell">
       <AddChannel />
-      <div className="mdc-card">
-        <ul className="mdc-list">
+      <Card>
+        <List>
           {Channels(allChannels)}
-        </ul>
-      </div>
+        </List>
+      </Card>
     </div>
   );
 };

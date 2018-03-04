@@ -6,6 +6,7 @@ import { ApolloProvider } from 'react-apollo';
 // Components and relative imports
 import ChannelsList from './components/ChannelsList';
 import Toolbar from './components/Toolbar';
+import Grid from './components/Grid';
 
 const client = new ApolloClient({
   uri: 'https://api.graph.cool/simple/v1/cjeah8gn71lvx0171ta17gtbv',
@@ -15,12 +16,9 @@ const client = new ApolloClient({
 const App = () => (
   <ApolloProvider client={client}>
     <Toolbar>Apollo Tutorial</Toolbar>
-
-    <div className="mdc-layout-grid">
-      <div className="mdc-layout-grid__inner">
-        <ChannelsList />
-      </div>
-    </div>
+    <Grid>
+      <ChannelsList />
+    </Grid>
   </ApolloProvider>
 );
 
